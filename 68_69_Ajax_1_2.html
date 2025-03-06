@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnología AJAX I-II - Asynchronous JAvascript Xml</title>
+
+
+    <style>
+        body{
+            background-color: blue;
+        }
+        .principal{
+            width: 40rem;
+            
+        }
+        .contenido{
+            color: white;
+            margin-left: 15rem;
+            display: flex;
+
+        }
+       .logo{
+            color: yellow;
+            font-size: 3rem;
+            text-align: center;
+       } 
+
+
+        li, a{
+            display: inline-block;
+            background-color: white;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 4px;
+            text-decoration: none;
+       } 
+
+       #noticias{
+            display: contents;
+       }
+  
+       #noticias li a:hover{
+            background-color: rgb(255,153,0);
+            color: white;
+       }
+       #contenidos_externos, #noticia{
+            margin-top: 10px;
+            padding: 20px;
+            border: 1px solid white;
+       }
+        
+    </style>
+
+
+    <script src="Jquery-3.7.1.js"></script> 
+
+
+    <script>
+
+        $("#noticias a").click(function(){
+
+            /* Carga el contenido de la página <deportivas.html> en el div <contenmidos_externos>
+               load() -> funciñon de JQuery para Ajax */
+            ("#contenidos_externos").load("68_69_Ajax_generales.html"); 
+            return false; 
+        });            
+
+       
+    </script>
+
+
+</head>    
+
+<body>
+   <div class="cabecera">
+    <p class="logo">Píldoras informáticas. Función load()</p>
+   </div>
+   <div class="contenido">
+    <div class="principal">
+        <h1>Noticias varias</h1>
+        <hr>
+        <ul id="noticias">
+            <li><a href="68_69_Ajax_99_generales.html">Noticias Generales</a></li>
+            <li><a href="deportivas.html">Noticias Deportivas</a></li>
+            <li><a href="tiempo.html">Noticias del Tiempo</a></li>
+        </ul>
+        <div id="contenidos_externos"></div>
+        <hr>
+    </div>
+   </div>
+</body>
+
+</html>
+    
