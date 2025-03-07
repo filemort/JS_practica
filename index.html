@@ -63,7 +63,7 @@
                 /* Carga el contenido de la página <generales.html> en el div <contenmidos_externos>
                 load() -> funciñon de JQuery para Ajax */
 
-                let pagina_acarcar=$(this).attr("href");
+                let pagina_acarcar=$("#noticias a").attr("href");
                 $("#contenidos_externos").load(pagina_acarcar + " #noticia"); 
                 return false; 
             });            
