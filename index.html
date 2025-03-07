@@ -63,7 +63,9 @@
             $("#noticias a").click(function(){
                 /* Carga el contenido de la página <generales.html> en el div <contenmidos_externos>
                 load() -> funciñon de JQuery para Ajax */
-                $("#contenidos_externos").load("68_69_Ajax_generales.html"); 
+
+                let pagina_acarcar=$(this).attr("href");
+                $("#contenidos_externos").load(pagina_acarcar + " #noticia"); 
                 return false; 
             });            
     });
