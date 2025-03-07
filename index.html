@@ -57,16 +57,17 @@
 
 
     <script>
-
         //$(document).ready(function(){
-            $("#noticias a").click(function(){
-                /* Carga el contenido de la página <generales.html> en el div <contenmidos_externos>
-                load() -> funciñon de JQuery para Ajax */
 
-                let pagina_acarcar=$("#noticias a").attr("href");
-                $("#contenidos_externos").load(pagina_acarcar + " #noticia"); 
-                return false; 
-            });            
+            $("#noticias a").click(function(){
+
+            /* Carga el contenido de la página <deportivas.html> en el div <contenmidos_externos>
+               load() -> función de JQuery para Ajax */
+            let pagina_acarcar=$("#noticias a").attr("href");
+            $("#contenidos_externos").load(pagina_acarcar) + " #noticia"; 
+            return false; 
+        });            
+
        
     </script>
 
