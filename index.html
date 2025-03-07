@@ -64,9 +64,8 @@
             /* Carga el contenido de la página <deportivas.html> en el div <contenmidos_externos>
                load() -> función de JQuery para Ajax */
             let pagina_acarcar=$("#noticias a").attr("href");
-            document.write("carga la pagina:" + pagina_acargar);
-            $("#contenidos_externos").load(pagina_acarcar) + " #noticia"; 
-            //return false; 
+            $("#contenidos_externos").load(pagina_acarcar); 
+            return false; 
         });            
     });
 
