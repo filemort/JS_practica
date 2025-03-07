@@ -53,13 +53,12 @@
     </style>
 
 
-    <script src="Jquery-3.7.1.js"></script> 
+    <script src="https://code.jquery.com/Jquery-3.7.1.min.js"></script> 
 
 
     <script>
 
-        $(document).ready(function(){
-
+        //$(document).ready(function(){
             $("#noticias a").click(function(){
                 /* Carga el contenido de la página <generales.html> en el div <contenmidos_externos>
                 load() -> funciñon de JQuery para Ajax */
@@ -68,8 +67,6 @@
                 $("#contenidos_externos").load(pagina_acarcar + " #noticia"); 
                 return false; 
             });            
-    });
-
        
     </script>
 
