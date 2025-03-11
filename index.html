@@ -61,7 +61,8 @@
              $("#login").submit(function(){
 
                 let datosFormulario={usuario:$("#usuario").val(),
-                                     contra:$("#contra").val()}
+                                     contra:$("#contra").val()};
+                document.write(datosFormulario);                     
 
                 $.get("login.php", datosFormulario, procesarDatos);       // Envia el paquete de datos al servidor                
 
