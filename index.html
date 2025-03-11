@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnología AJAX III -IV -> Get() - Post()</title>
+    <title>Tecnología AJAX V -> Control de errores</title>
 
     <style>
         body{
@@ -61,10 +61,11 @@
              $("#login").submit(function(){
 
                 let datosFormulario={usuario:$("#usuario").val(),
-                                     contra:$("#contra").val()};
-                console.log(datosFormulario);                     
+                                     contra:$("#contra").val()}
 
-                $.get("login.php", datosFormulario, procesarDatos);       // Envia el paquete de datos al servidor                
+                $.get("login.php", datosFormulario, procesarDatos).fail(procesarError);       // Envia el paquete de datos al servidor      
+                
+                
 
                 return false;    /* Para que no se recarge toda la página como hace por defecto el elemento submit, 
                                     sino que cargue solo los datos devueltos.*/ 
@@ -83,6 +84,12 @@
                 }
 
              }
+
+             function procesarError(){
+                let msgError="Ha ocurrido algo inesperado en la conexión con el seridor";
+
+                $("#contenidos_externos").html("<p>" + msgError + "</p>");
+             } 
        
     });
 
