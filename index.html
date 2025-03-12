@@ -72,12 +72,12 @@
 
              function procesarDatos(datos_devueltos){
 
-                if(datos_devueltos=='validado') {
+                if(datos_devueltos=='fallo de autenticación') {
 
-                    $("#contenidos_externos").html("<p> Usuario autorizado </p>");
+                    $("#contenidos_externos").html("<p> Usuario no autorizado </p>");
 
                 } else {
-                    $("#contenidos_externos").html("<p> Usuario no autorizado </p>");
+                    $("#contenidos_externos").html("<p> Usuario autorizado </p>");
                 };
 
              };
