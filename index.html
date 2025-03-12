@@ -61,9 +61,10 @@
              $("#login").submit(function(){
 
                 let datosFormulario={usuario:$("#usuario").val(),
-                                     contra:$("#contra").val()}
+                                     contra:$("#contra").val()};
+                $.get("login.php", datosFormulario, procesarDatos);                     
 
-                $.get("login.php", datosFormulario, procesarDatos).fail(procesarError);       // Envia el paquete de datos al servidor      
+               // $.get("login.php", datosFormulario, procesarDatos).fail(procesarError);       // Envia el paquete de datos al servidor      
                 
                 return false;    /* Para que no se recarge toda la página como hace por defecto el elemento submit, 
                                     sino que cargue solo los datos devueltos.*/ 
@@ -77,15 +78,15 @@
 
                 } else {
                     $("#contenidos_externos").html("<p> Usuario no autorizado </p>");
-                }
+                };
 
-             }
+             };
 
              function procesarError(){
                 let msgError="Ha ocurrido algo inesperado en la conexión con el seridor";
 
                 $("#contenidos_externos").html("<p>" + msgError + "</p>");
-             } 
+             }; 
        
     });
 
