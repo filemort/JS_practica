@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnología AJAX VI -> Objetos JSON I</title>
+
+    <style>
+        body{
+            background-color: #000099;
+            color: white;
+        }
+        table{
+            margin-left: 80px;
+        }
+        label{
+            font-size: 25px;
+        }
+        #boton{
+            font-weight: bold;
+            font-size: 18px;
+            margin-left: 15px;
+        }
+        .logo{
+            text-align: center;
+            color: yellow;
+            font-size: 50px;
+        }
+        #noticias li{
+            display: inline-block;
+            margin-right: 30px;
+        }
+        #noticias li a{
+            padding: 5px 10px;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+        }
+        noticias li a:hover{
+            background-color: rgb(255,153,0);
+        }
+        #contenidos_externos #noticia{
+            margin-top: 10px;
+            padding: 20px;
+            border: 1px solid white;
+        }
+        hr{
+            margin-left: 80px;
+            width: 680px;
+        }
+        
+    </style>
+
+
+    <script src="https://code.jquery.com/Jquery-3.7.1.min.js"></script> 
+
+
+    <script>
+        $(document).ready(function(){
+
+             $("#login").submit(function(){
+
+                let datosFormulario={usuario:$("#usuario").val()};
+               
+                $.getJSON("loginjson.php", datosFormulario, procesarDatos);       // Envia el paquete de datos al servidor      
+                
+                return false;    /* Para que no se recarge toda la página como hace por defecto el elemento submit, 
+                                    sino que cargue solo los datos devueltos.*/ 
+             });
+
+             function procesarDatos(datos_devueltos){
+                $("#contenidos_externos").html(datos_devueltos.Edad);
+
+                
+            }; 
+
+
+       
+    });
+
+       
+    </script>
+
+
+</head>    
+
+    <div class="cabecera">
+        <p class="logo">Procesando respuesta del servidor</p>
+    </div>
+    <div class="contenido">
+        <div class="principal">
+            <form method="get" action="login.php" id="login">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="usuario">Usuario:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="usuario" id="usuario">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" name="boton" id="boton" value="Enviar">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <hr align="left">
+            <div id="contenidos_externos"></div>    
+        </div>
+    </div>
+
+
+<body>
+   
+</body>
+
+</html>
+    
