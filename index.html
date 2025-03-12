@@ -60,31 +60,21 @@
 
              $("#login").submit(function(){
 
-                let datosFormulario={usuario:$("#usuario").val(),
-                                     contra:$("#contra").val()};
+                let datosFormulario={usuario:$("#usuario").val()};
                
-                $.getjson("login.json", datosFormulario, procesarDatos);       // Envia el paquete de datos al servidor      
+                $.getJSON("loginjson.php", datosFormulario, procesarDatos);       // Envia el paquete de datos al servidor      
                 
                 return false;    /* Para que no se recarge toda la página como hace por defecto el elemento submit, 
                                     sino que cargue solo los datos devueltos.*/ 
              });
 
              function procesarDatos(datos_devueltos){
+                $("#contenidos_externos").html(datos_devueltos.Edad);
 
-                if(datos_devueltos=='fallo de autenticación') {
-                    $("#contenidos_externos").html("<p> Usuario no autorizado </p>");
-                } else if (datos_devueltos=="validado"){ 
-                          $("#contenidos_externos").html("<p> Usuario autorizado </p>")}
-                       else {
-                          $("#contenidos_externos").html("<p> Error desconocido </p>")}
+                
             }; 
 
 
-             function procesarError(){
-                let msgError="Ha ocurrido algo inesperado en la conexión con el seridor";
-
-                $("#contenidos_externos").html("<p>" + msgError + "</p>");
-             }; 
        
     });
 
@@ -107,14 +97,6 @@
                         </td>
                         <td>
                             <input type="text" name="usuario" id="usuario">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="contra">Contraseña:</label>
-                        </td>
-                        <td>
-                            <input type="text" name="contra" id="contra">
                         </td>
                     </tr>
                     <tr>
