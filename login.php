@@ -1,7 +1,7 @@
 <?php
 
-$contra_entrar="5678";
-$usu_entrar="Pepe";
+$contra_entrar="1234";
+$usu_entrar="Juan";
 
 $el_usuario=isset($_GET['usuario']) ? $_GET['usuario'] : $_POST['usuario'];
 
