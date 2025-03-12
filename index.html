@@ -73,14 +73,13 @@
              function procesarDatos(datos_devueltos){
 
                 if(datos_devueltos=='fallo de autenticación') {
-
                     $("#contenidos_externos").html("<p> Usuario no autorizado </p>");
+                } else if (datos_devueltos=="validado"){ 
+                          $("#contenidos_externos").html("<p> Usuario autorizado </p>")}
+                       else {
+                          $("#contenidos_externos").html("<p> Error desconocido </p>")}
+            }; 
 
-                } else {
-                    $("#contenidos_externos").html("<p> Usuario autorizado </p>");
-                };
-
-             };
 
              function procesarError(){
                 let msgError="Ha ocurrido algo inesperado en la conexión con el seridor";
