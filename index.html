@@ -61,18 +61,12 @@
              $("#login").submit(function(){
 
                 let datosFormulario={usuario:$("#usuario").val(),
-                                     contra:$("#contra").val()}
+                                     contra:$("#contra").val()};
 
-                $.get("login.php", datosFormulario, procesarDatos);                     
-
-              //  $.get("login.php", datosFormulario, procesarDatos).fail(procesarError);       // Envia el paquete de datos al servidor      
+                $.get("login.php", datosFormulario, procesarDatos).fail(procesarError);       // Envia el paquete de datos al servidor      
                 
-                
-
                 return false;    /* Para que no se recarge toda la página como hace por defecto el elemento submit, 
                                     sino que cargue solo los datos devueltos.*/ 
-
-
              });
 
              function procesarDatos(datos_devueltos){
